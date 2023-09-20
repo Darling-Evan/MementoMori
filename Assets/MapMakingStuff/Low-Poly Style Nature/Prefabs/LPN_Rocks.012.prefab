@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000011985986042}
   - component: {fileID: 23000012778422962}
   - component: {fileID: 4158036536483278376}
+  - component: {fileID: 5900427488420586349}
   m_Layer: 0
   m_Name: LPN_Rocks.012
   m_TagString: Untagged
@@ -101,8 +102,29 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300072, guid: 12d2ed6417ce14085ac856a645edee45, type: 3}
+--- !u!65 &5900427488420586349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010377807006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.83, y: 0.15, z: 1.08}
+  m_Center: {x: 0.000011563301, y: 0.1, z: -0.017955333}
