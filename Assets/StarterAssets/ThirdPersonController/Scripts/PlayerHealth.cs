@@ -23,12 +23,16 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // Dead
-            // Death Animation
-            // anim.SetBool("IsDead", true);
-            // Show GameOver screen
-
+            onDeath();
         }
     }
+
+    private void onDeath() {
+        // Dead
+        // Death Animation
+        // anim.SetBool("IsDead", true);
+        // Show GameOver screen
+    }
+
 
 }

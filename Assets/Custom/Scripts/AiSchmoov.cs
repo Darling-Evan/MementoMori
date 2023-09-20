@@ -1,19 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
 public class AiSchmoov : MonoBehaviour {
+
     [SerializeField] private bool useMovementPrediction;
     [SerializeField] private bool ShowDebug;
     [SerializeField, Range(-1,1)] private float PredictionThreshold = 0;
     [SerializeField, Range(0.25f, 2f)] private float PredictionTime = 1f;
 
     public Victim victim;
+    private GameObject player;
     public float updateSpeed = 0.1f;
 
     private NavMeshAgent agent;
@@ -34,6 +38,8 @@ public class AiSchmoov : MonoBehaviour {
 
     public void Start() {
         StartCoroutine(GetTarget());
+        player = GameObject.Find("Player/PlayerArmature");
+        victim = player.GetComponent<Victim>();
     }
 
     private void OnAnimatorMove() {
@@ -71,6 +77,11 @@ public class AiSchmoov : MonoBehaviour {
 
     private void Update() {
         AnimSync();
+        if(player.name != "PlayerArmature") {
+            Debug.Log("PlayerArmature not found, searching...");
+            player = GameObject.Find("Player/PlayerArmature");
+            victim = player.GetComponent<Victim>();
+        }
     }
 
     private void AnimSync() {
