@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000013038783978}
   - component: {fileID: -3130175587362756318}
   - component: {fileID: 7813952849201245882}
+  - component: {fileID: 3352606527299799704}
   m_Layer: 0
   m_Name: LPN_Trees.002
   m_TagString: Untagged
@@ -130,3 +131,30 @@ CapsuleCollider:
   m_Height: 3.9737074
   m_Direction: 1
   m_Center: {x: 0.071897596, y: 1.9868537, z: 0.24}
+--- !u!205 &3352606527299799704
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014171067106}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.071897626, y: 1.9868537, z: 0.04577458}
+  m_Size: 3.9737074
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000013038783978}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000013038783978}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000013038783978}
+  m_Enabled: 1

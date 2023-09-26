@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010153039966}
   - component: {fileID: 23000011030955696}
   - component: {fileID: -8635514653620601748}
+  - component: {fileID: 2406576662563376634}
   m_Layer: 0
   m_Name: LPN_Large_Rocks.005
   m_TagString: Untagged
@@ -101,8 +102,35 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: d2331550a5a5e4450b2c29bb8533d61a, type: 3}
+--- !u!205 &2406576662563376634
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012027079872}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.18693697, y: 0.9319708, z: -0.15086603}
+  m_Size: 3.5603657
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000011030955696}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000011030955696}
+  - screenRelativeHeight: 0.04567734
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000011030955696}
+  m_Enabled: 1

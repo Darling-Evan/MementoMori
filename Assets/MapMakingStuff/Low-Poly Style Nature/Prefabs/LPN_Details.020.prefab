@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000013276286232}
   - component: {fileID: 23000012490259922}
   - component: {fileID: -805671096659060887}
+  - component: {fileID: 6717200284668030333}
   m_Layer: 0
   m_Name: LPN_Details.020
   m_TagString: Untagged
@@ -101,8 +102,35 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300010, guid: 12d2ed6417ce14085ac856a645edee45, type: 3}
+--- !u!205 &6717200284668030333
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013265513606}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.019804388, y: 0.14723594, z: 0.031651914}
+  m_Size: 0.58400816
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000012490259922}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000012490259922}
+  - screenRelativeHeight: 0.036808643
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000012490259922}
+  m_Enabled: 1
