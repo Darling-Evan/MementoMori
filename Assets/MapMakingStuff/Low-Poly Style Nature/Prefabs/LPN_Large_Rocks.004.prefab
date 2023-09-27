@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 23000013010707364}
   - component: {fileID: 4652654086634177865}
   - component: {fileID: 157520658275382097}
+  - component: {fileID: 6568380109055365957}
+  - component: {fileID: 5371832739322266941}
   m_Layer: 0
   m_Name: LPN_Large_Rocks.004
   m_TagString: Untagged
@@ -134,3 +136,45 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23000013010707364}
   m_Enabled: 1
+--- !u!65 &6568380109055365957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013560862338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.16, y: 1.58, z: 1.09}
+  m_Center: {x: -0.0000006556511, y: 0.8507844, z: 0.00000047683716}
+--- !u!65 &5371832739322266941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013560862338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.74, y: 0.32, z: 1.7}
+  m_Center: {x: -0.0000006556511, y: 0.09, z: 0.00000047683716}

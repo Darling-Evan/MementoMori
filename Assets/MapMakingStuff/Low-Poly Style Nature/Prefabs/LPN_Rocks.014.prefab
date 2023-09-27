@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000012579782530}
   - component: {fileID: 9111575208446589990}
   - component: {fileID: 2457305449736296186}
+  - component: {fileID: 6363746264060268660}
   m_Layer: 0
   m_Name: LPN_Rocks.014
   m_TagString: Untagged
@@ -134,3 +135,24 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23000012579782530}
   m_Enabled: 1
+--- !u!65 &6363746264060268660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010385664364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.96, y: 0.93, z: 1.17}
+  m_Center: {x: 0.011593938, y: 0.38967228, z: -0.03}
