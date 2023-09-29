@@ -17875,6 +17875,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 630016962696293733, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: near clip plane
+      value: -10.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 630016962696293733, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: orthographic size
+      value: 10.76
+      objectReference: {fileID: 0}
     - target: {fileID: 4763448717977224135, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: playerHealthScript
       value: 
@@ -17950,6 +17958,18 @@ PrefabInstance:
     - target: {fileID: 8009081875323149271, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223220562434826032, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_Lens.NearClipPlane
+      value: -10.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824974144903094116, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824974144903094116, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
