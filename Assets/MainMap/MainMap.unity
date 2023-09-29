@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44812512, g: 0.49813825, b: 0.57554615, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.5755831, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22839,6 +22839,7 @@ GameObject:
   - component: {fileID: 2078476382}
   - component: {fileID: 2078476384}
   - component: {fileID: 2078476383}
+  - component: {fileID: 2078476385}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -22854,13 +22855,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078476381}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.57956856, y: 0.09245713, z: -0.6251354, w: 0.51454616}
+  m_LocalRotation: {x: 0.27059805, y: -0.6532815, z: 0.27059805, w: 0.6532815}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 165373404}
-  m_LocalEulerAnglesHint: {x: 45.4, y: -63.7, z: -130.21901}
+  m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
 --- !u!114 &2078476383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22905,7 +22906,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.778
     m_Bias: 0.02
     m_NormalBias: 0.21
     m_NearPlane: 0.1
@@ -22945,7 +22946,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 2
+  m_ShadowAngle: 3.2
+--- !u!114 &2078476385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078476381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737577652e87e4040a1e82f022a3b558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2078556113
 GameObject:
   m_ObjectHideFlags: 0
