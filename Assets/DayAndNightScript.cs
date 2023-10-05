@@ -3,7 +3,7 @@ using UnityEngine;
 public class DayAndNightScript : MonoBehaviour
 {
     Vector3 rot = Vector3.zero;
-    float degpersec = 6;
+    float degpersec = 0.5f;
 
     // Update is called once per frame
     void Update()
