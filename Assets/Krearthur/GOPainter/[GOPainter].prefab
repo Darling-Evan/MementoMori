@@ -33,12 +33,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035126763994278543}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2035126763994278536
 MonoBehaviour:
@@ -69,22 +70,18 @@ MonoBehaviour:
   brushRadius: 0
   density: 1
   rotationStep: 15
-  levelSizeX: 1000
-  levelSizeY: 1000
-  levelSizeZ: 1000
+  paintCanvasSize: 500
   preventCanvasBelow0: 1
   snapToGrid: 0
   snappingBase: 1
   gridSize: {x: 1, y: 1, z: 1}
-  extraOffset: {x: 0, y: 0, z: 0}
+  placementOffset: {x: 0, y: 0, z: 0}
   dynamicGrid: 0
   paintIgnoreColliding: 0
   alignWithSurface: 1
-  raycastCanvasOnly: 1
+  paintOnlyOnGround: 1
   alignWithStroke: 0
   alignAxis: 2
-  drawLevelBoundaries: 0
-  drawCanvasBorder: 0
   fillRect: 0
   placeOffset: {x: 0, y: 0, z: 0}
   padding: 2
@@ -92,12 +89,13 @@ MonoBehaviour:
   sameScaleForObjects: 0
   editLayer: Ignore Raycast
   canvasLayer: Water
-  canvasTransparent: 0
+  hideCanvas: 0
   rootGroupObjectName: '[LevelTiles]'
   paintCanvasName: '[GOP-Canvas]'
   sampleScreenDistance: 20
-  enableSounds: 1
+  enableSounds: 0
   showInfoBar: 1
+  autoSetTerrainLayer: 0
   MASK_ONLY_OBJECTS: -21
   MASK_CANVAS_ONLY: 16
   MASK_EDITLAYER_ONLY: 4
@@ -109,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035126763994278543}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7803277bc982d114f98c42cc069e51f7, type: 3}
   m_Name: 
@@ -167,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035126763994278543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 534f8ce9f1cbc16459933b3e76f8bcb6, type: 3}
   m_Name: 
@@ -280,8 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1662b34e10904334db822d995de8c28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToCreate: {fileID: 5031257840504857414, guid: 395a012b689703f4784206747796ae46,
-    type: 3}
+  objectToCreate: {fileID: 5031257840504857414, guid: 395a012b689703f4784206747796ae46, type: 3}
   group: {fileID: 0}
   relativePos: 0
   appendChargeNumber: 1
