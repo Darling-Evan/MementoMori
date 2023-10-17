@@ -8,8 +8,13 @@ public class DayAndNightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rot.x = degpersec * Time.deltaTime;
-        transform.Rotate(rot, Space.World);
+        if(GameObject.FindWithTag("Sun"))
+        {
+            rot.x = degpersec * Time.deltaTime;
+            transform.Rotate(rot, Space.World);
+        }
+        // rot.x = degpersec * Time.deltaTime;
+        // transform.Rotate(rot, Space.World);
 
         
     }
