@@ -42461,6 +42461,14 @@ PrefabInstance:
       propertyPath: m_Lens.NearClipPlane
       value: -15
       objectReference: {fileID: 0}
+    - target: {fileID: 8551310067022659807, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_Name
+      value: CanvasHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551310067022659807, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8824974144903094116, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -623
@@ -42468,6 +42476,14 @@ PrefabInstance:
     - target: {fileID: 8824974144903094116, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175764702052753690, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_Name
+      value: CanvasMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175764702052753690, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
