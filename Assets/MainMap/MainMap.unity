@@ -4371,6 +4371,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5009114074224420992, guid: 15836ce6b0ac5ef41afcb24e151a884d, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31898,6 +31902,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectionDuration: 1
   collectionInterval: 0.1
+--- !u!114 &1365416497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365416485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10491e502fee5f64daf1a5018c911838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comboCooldown: 0.2
+  attackCooldown: 0.2
+  animCompletion: 0.9
+  endDelay: 1
+  combo: []
 --- !u!1 &1372135779
 GameObject:
   m_ObjectHideFlags: 0
@@ -34256,6 +34277,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6707841088299629213, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1365416494}
+    - targetCorrespondingSourceObject: {fileID: 6707841088299629213, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1365416497}
   m_SourcePrefab: {fileID: 100100000, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
 --- !u!1 &1490003580
 GameObject:

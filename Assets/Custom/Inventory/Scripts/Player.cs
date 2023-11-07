@@ -19,6 +19,9 @@ public class Player : MonoBehaviour {
 
     private InventoryManager manager;
     private GameObject currentMenu;
+    private Weapon currentWeapon;
+
+    public Weapon CurrentWeapon { get { return currentWeapon; } }
 
     private void Awake() {
         manager = InventoryManager.Instance;
