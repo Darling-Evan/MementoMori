@@ -6,6 +6,11 @@ using UnityEditor;
 
 public class AttackSO : ScriptableObject
 {
+    [Header("Animation Properties")]
     public AnimatorOverrideController animOverride;
-    public float damage;
+    [SerializeField, Range(0,1)] private float minAnimDuration = 0.95f;
+
+    [Header("Attack Properties")]
+    [SerializeField] private float damage;
+
 }

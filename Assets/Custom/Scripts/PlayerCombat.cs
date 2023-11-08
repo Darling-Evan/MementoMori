@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
 {
     //most of these properties (with the exception of the two cooldowns) shouldn't need to be changed much if at all. They are just there for testing and to make me happy. Dont worry about them :)
     [SerializeField, Tooltip("Minimum time allowed between combos")] private float comboCooldown = 0.2f;
-    [SerializeField, Tooltip("Minimum time allowed between attacks")] private float attackCooldown = 0.2f;
+    [SerializeField, Tooltip("Minimum time allowed between attacks"), Range(0,1)] private float attackMinDuration = 0.95f;
     [SerializeField, Tooltip("This is the percentage that an attack animation must be played to before the combo can exit into the next state (this shouldn't need to change much)"), Range(0,1)] private float animCompletion = 0.9f;
     [SerializeField, Tooltip("Time delay before combo ends")] private float endDelay = 1f;
     public List<AttackSO> combo;
@@ -31,23 +31,23 @@ public class PlayerCombat : MonoBehaviour
         if(Input.GetButtonDown("Fire1")) {
             Attack();
         }
-        
         ExitAttack();
     }
 
     private void Attack() {
-        if(Time.time - lastCombo > comboCooldown && comboIndex <= combo.Count) {
+        if(Time.time - lastCombo > comboCooldown && comboIndex < combo.Count) {
             CancelInvoke("EndCombo");
 
-            if(Time.time - lastClick > attackCooldown) {
+            Debug.Log(combo[comboIndex].animOverride["AttackPH"].length);
+            if(Time.time - lastClick > combo[comboIndex].animOverride["AttackPH"].length * attackMinDuration) {
                 anim.runtimeAnimatorController = combo[comboIndex].animOverride;
-                Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
+                //Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
 
                 anim.Play("Attack", 0, 0);
-                lastClick = Time.time;
                 comboIndex++;
+                lastClick = Time.time;
 
-                if(comboIndex > combo.Count) {
+                if (comboIndex > combo.Count) {
                     comboIndex = 0;
                 }
             }
