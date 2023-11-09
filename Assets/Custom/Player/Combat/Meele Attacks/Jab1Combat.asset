@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32b0c572b1c06e488a7c66d8f5aa62a, type: 3}
   m_Name: Jab1Combat
   m_EditorClassIdentifier: 
-  animOverride: {fileID: 0}
+  animOverride: {fileID: 22100000, guid: c55682119133547409b20c70157d4169, type: 2}
+  minAnimDuration: 0.95
   damage: 0

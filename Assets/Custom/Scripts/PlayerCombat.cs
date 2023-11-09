@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,16 +9,16 @@ public class PlayerCombat : MonoBehaviour
 {
     //most of these properties (with the exception of the two cooldowns) shouldn't need to be changed much if at all. They are just there for testing and to make me happy. Dont worry about them :)
     [SerializeField, Tooltip("Minimum time allowed between combos")] private float comboCooldown = 0.2f;
-    [SerializeField, Tooltip("Minimum time allowed between attacks"), Range(0,1)] private float attackMinDuration = 0.95f;
     [SerializeField, Tooltip("This is the percentage that an attack animation must be played to before the combo can exit into the next state (this shouldn't need to change much)"), Range(0,1)] private float animCompletion = 0.9f;
     [SerializeField, Tooltip("Time delay before combo ends")] private float endDelay = 1f;
     public List<AttackSO> combo;
 
     private float lastClick;
     private float lastCombo;
-    private int comboIndex;
+    private int comboIndex = 0;
 
     private Animator anim;
+    private AttackSO currentAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,8 @@ public class PlayerCombat : MonoBehaviour
         if(Time.time - lastCombo > comboCooldown && comboIndex < combo.Count) {
             CancelInvoke("EndCombo");
 
-            Debug.Log(combo[comboIndex].animOverride["AttackPH"].length);
-            if(Time.time - lastClick > combo[comboIndex].animOverride["AttackPH"].length * attackMinDuration) {
+            currentAttack = combo[comboIndex];
+            if(Time.time - lastClick >= currentAttack.animOverride["AttackPH"].length * currentAttack.MinAnimDuration) {
                 anim.runtimeAnimatorController = combo[comboIndex].animOverride;
                 //Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
 

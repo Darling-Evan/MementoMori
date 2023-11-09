@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32b0c572b1c06e488a7c66d8f5aa62a, type: 3}
   m_Name: LeftHandMidSection1
   m_EditorClassIdentifier: 
-  animOverride: {fileID: 0}
+  animOverride: {fileID: 22100000, guid: 72d77a30395cf3347bec90066b1306af, type: 2}
+  minAnimDuration: 0.95
   damage: 0

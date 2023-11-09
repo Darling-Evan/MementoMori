@@ -13,4 +13,6 @@ public class AttackSO : ScriptableObject
     [Header("Attack Properties")]
     [SerializeField] private float damage;
 
+    public float MinAnimDuration { get => minAnimDuration; }
+    public float Damage { get => damage; }
 }
