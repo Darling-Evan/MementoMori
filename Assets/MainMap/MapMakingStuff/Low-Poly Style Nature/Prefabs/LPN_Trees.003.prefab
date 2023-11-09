@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000012678989182}
   - component: {fileID: 23000010633159654}
   - component: {fileID: 4964721477559172558}
-  - component: {fileID: 5573229839671267080}
+  - component: {fileID: 2470760513158460730}
   m_Layer: 0
   m_Name: LPN_Trees.003
   m_TagString: Untagged
@@ -107,7 +107,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300122, guid: 12d2ed6417ce14085ac856a645edee45, type: 3}
---- !u!205 &5573229839671267080
+--- !u!205 &2470760513158460730
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
