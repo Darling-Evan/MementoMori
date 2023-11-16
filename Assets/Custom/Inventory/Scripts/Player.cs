@@ -45,6 +45,8 @@ public class Player : MonoBehaviour {
         } 
 
         if(Input.GetKeyDown(KeyCode.Alpha1)) {
+            currentWeapon = InventoryManager.Instance.EquippedWeapons[0].Item as Weapon;
+            Debug.Log("Deploy: " + currentWeapon.ItemName);
             currentWeapon.Deploy();
         }
     }
