@@ -11,15 +11,18 @@ public class MapShow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if (PauseMenu.GameIsPaused == false)
         {
-            if(mapIsShowing)
+            if (Input.GetKeyDown(KeyCode.M))
             {
-                RevealMap();
-            }
-            else
-            {
-                HideMap();
+                if (mapIsShowing)
+                {
+                    RevealMap();
+                }
+                else
+                {
+                    HideMap();
+                }
             }
         }
     }
@@ -30,9 +33,11 @@ public class MapShow : MonoBehaviour
         mapIsShowing = false;
     }
 
+    
     void HideMap()
     {
         mapShowingUI.SetActive(true);
         mapIsShowing = true;
     }
+
 }
