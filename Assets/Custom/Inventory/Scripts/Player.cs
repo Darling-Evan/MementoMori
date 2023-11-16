@@ -1,6 +1,7 @@
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -19,8 +20,10 @@ public class Player : MonoBehaviour {
 
     private InventoryManager manager;
     private GameObject currentMenu;
-    private Weapon currentWeapon;
+    [SerializeField] private Weapon currentWeapon;
+    [SerializeField] private Transform weaponParent;
 
+    public Transform WeaponParent { get { return weaponParent; } }
     public Weapon CurrentWeapon { get { return currentWeapon; } }
 
     private void Awake() {
@@ -40,6 +43,14 @@ public class Player : MonoBehaviour {
                 currentMenu = null;
             }
         } 
+
+        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+            currentWeapon.Deploy();
+        }
+    }
+
+    public void SelectWeapon() {
+
     }
 }
 
