@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour {
 
     [SerializeField] private Dictionary<string, Item> inventory = new Dictionary<string, Item>();
     [SerializeField] private ArmorSlot[] equippedArmor = new ArmorSlot[4];
-    [SerializeField] private EquipmentSlot[] equippedWeapons = new EquipmentSlot[4];
+    [SerializeField] private EquipmentSlot[] hotBar = new EquipmentSlot[4];
 
     public static InventoryManager Instance { get; private set; }
 
@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour {
     //Gets
     public Dictionary<string, Item> Inventory { get { return inventory; } }
     public ArmorSlot[] EquippedArmor { get { return equippedArmor; } }
-    public EquipmentSlot[] EquippedWeapons { get { return equippedWeapons; } }
+    public EquipmentSlot[] HotBar { get { return hotBar; } }
 
     private void Awake() {
         Instance = this;
@@ -59,12 +59,12 @@ public class InventoryManager : MonoBehaviour {
     }
 
     public void EquipWeapon(int slot, Weapon weapon) {
-        if (equippedWeapons[slot].Item != null) {
+        if (hotBar[slot].Item != null) {
             UnequipWeapon(slot);
         }
-        equippedWeapons[slot].Item = weapon;
+        hotBar[slot].Item = weapon;
         InventoryRemove(weapon);
-        equippedWeapons[slot].Populate();
+        hotBar[slot].Populate();
     }
 
 
@@ -81,12 +81,17 @@ public class InventoryManager : MonoBehaviour {
     }
 
     private void UnequipWeapon(int slot) {
-        InventoryAdd(equippedWeapons[slot].Item);
-        equippedWeapons[slot].Item = null;
+        InventoryAdd(hotBar[slot].Item);
+        hotBar[slot].Item = null;
+    }
+
+    public void RemoveFromHotBar(int slot) {
+        hotBar[slot - 1].Item = null;
     }
     private void ResetSlots() {
         expectedSlot = null;
         selectedItem = null;
+
     }
 
 

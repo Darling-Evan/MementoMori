@@ -22,7 +22,7 @@ public class EquipmentSlot : MonoBehaviour
 
     private void Awake() {
         manager = InventoryManager.Instance;
-        manager.EquippedWeapons[slot] = this;
+        manager.HotBar[slot] = this;
         button = gameObject.GetComponent<Button>();
         icon = gameObject.transform.Find("Icon").GetComponent<Image>();
 

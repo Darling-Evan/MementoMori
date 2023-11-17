@@ -9,9 +9,14 @@ public class ItemWrapper : MonoBehaviour {
     public Item itemInstance;
 
     private void OnTriggerEnter(Collider other) {
-        if (!itemInstance.Equipped && other.CompareTag("Player")) {
-            InventoryManager.Instance.InventoryAdd(itemInstance);
-            Destroy(gameObject);
+        if (!itemInstance.Deployed && other.CompareTag("Player")) {
+            PickUp();
         }
+    }
+
+    public void PickUp() {
+        Debug.Log("Picked up " + itemInstance.ItemName);
+        InventoryManager.Instance.InventoryAdd(itemInstance);
+        Destroy(gameObject);
     }
 }
