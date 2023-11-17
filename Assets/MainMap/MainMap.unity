@@ -18079,16 +18079,15 @@ MonoBehaviour:
     - rid: 6279814870559621120
       type: {class: MeleeWeapon, ns: , asm: Assembly-CSharp}
       data:
-        prefab: {fileID: 1776472905282870, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
+        animations:
+        - {fileID: 11400000, guid: 97dcfec124d1c584f84afa7e3ed61298, type: 2}
         itemID: We02A1
         itemName: axeypoo
         icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+        prefab: {fileID: 1776472905282870, guid: 1fa34df54f1414448b502a85dfa4a95c, type: 3}
         deployable: 1
         attackSpeed: 0
         attackRange: 0
-        lightAttacks: []
-        heavyAttacks: []
-        specialAttacks: []
 --- !u!4 &599390857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012825835384, guid: 5cab19fdb480c4e94b567019c5375991, type: 3}
@@ -39048,16 +39047,15 @@ MonoBehaviour:
     - rid: 2400745537838252032
       type: {class: MeleeWeapon, ns: , asm: Assembly-CSharp}
       data:
-        prefab: {fileID: 1037715513984232, guid: 259746fbc59909b4eb14377c46a80363, type: 3}
+        animations:
+        - {fileID: 11400000, guid: c915fc80b3c710140a4803b1b7f68273, type: 2}
         itemID: We0S1
         itemName: SwordThing
         icon: {fileID: 21300136, guid: fbb6c1d6c8a0a8f45bcf228c2ae1f66e, type: 3}
+        prefab: {fileID: 1037715513984232, guid: 259746fbc59909b4eb14377c46a80363, type: 3}
         deployable: 1
         attackSpeed: 1000
         attackRange: 1000
-        lightAttacks: []
-        heavyAttacks: []
-        specialAttacks: []
 --- !u!64 &1286057358
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42019,6 +42017,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 167882171}
+  currentItem:
+    animations: []
+    itemID: 
+    itemName: 
+    icon: {fileID: 0}
+    prefab: {fileID: 0}
+    deployable: 0
   weaponParent: {fileID: 1123245041}
 --- !u!114 &1365416495
 MonoBehaviour:
@@ -42061,11 +42066,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comboCooldown: 0
   animCompletion: 0.9
-  endDelay: 1
+  endDelay: 0.8
   combo:
-  - {fileID: 11400000, guid: 97dcfec124d1c584f84afa7e3ed61298, type: 2}
-  - {fileID: 11400000, guid: 9d6cda049b8344b4c884a6bf25af3110, type: 2}
-  - {fileID: 11400000, guid: 827255a7ae6da564caa8d40baa92bd04, type: 2}
+  - {fileID: 11400000, guid: 78a2b46c7c24df1478445e2bcf26a30a, type: 2}
 --- !u!114 &1365416506
 MonoBehaviour:
   m_ObjectHideFlags: 0

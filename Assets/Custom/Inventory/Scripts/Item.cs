@@ -5,7 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Item {
 
-        [Header("Inventory Properties")]
+    [SerializeField] private List<UseAnimSO> animations;
+    public List<UseAnimSO> Animations { get { return animations; } }
+
+
+    [Header("Inventory Properties")]
 
     [SerializeField] private string itemID = "";
     public string ItemID { get { return itemID; } }

@@ -26,7 +26,7 @@ public class CreateAttack
 
         foreach (var item in Selection.objects) {
             if(item is AnimationClip) {
-                AttackSO attackSO = ScriptableObject.CreateInstance<AttackSO>();
+                UseAnimSO attackSO = ScriptableObject.CreateInstance<UseAnimSO>();
                 AssetDatabase.CreateAsset(attackSO, "Assets/Custom/Player/Combat/" + item.name + ".asset");
 
                 AnimatorOverrideController overrideController = new AnimatorOverrideController(anim);

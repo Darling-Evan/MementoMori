@@ -5,20 +5,21 @@ using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
+public class Use : MonoBehaviour
 {
     //most of these properties (with the exception of the two cooldowns) shouldn't need to be changed much if at all. They are just there for testing and to make me happy. Dont worry about them :)
     [SerializeField, Tooltip("Minimum time allowed between combos")] private float comboCooldown = 0.2f;
     [SerializeField, Tooltip("This is the percentage that an attack animation must be played to before the combo can exit into the next state (this shouldn't need to change much)"), Range(0,1)] private float animCompletion = 0.9f;
     [SerializeField, Tooltip("Time delay before combo ends")] private float endDelay = 1f;
-    public List<AttackSO> combo;
+    [SerializeField] private List<UseAnimSO> combo;
+    public List<UseAnimSO> Combo { get { return combo; } set { combo = value; } }
 
     private float lastClick;
     private float lastCombo;
     private int comboIndex = 0;
 
     private Animator anim;
-    private AttackSO currentAttack;
+    private UseAnimSO currentAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -30,21 +31,23 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1")) {
-            Attack();
+            Debug.Log("fire");
+            Animate();
         }
-        ExitAttack();
+        ExitAnim();
     }
 
-    private void Attack() {
+    private void Animate() {
         if(Time.time - lastCombo > comboCooldown && comboIndex < combo.Count) {
             CancelInvoke("EndCombo");
-
+            Debug.Log("CancelInvoke");
             currentAttack = combo[comboIndex];
-            if(Time.time - lastClick >= currentAttack.animOverride["AttackPH"].length * currentAttack.MinAnimDuration) {
+            if(Time.time - lastClick >= currentAttack.animOverride["UseAnimation"].length * currentAttack.MinAnimDuration) {
                 anim.runtimeAnimatorController = combo[comboIndex].animOverride;
                 //Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
+                Debug.Log("anim");
 
-                anim.Play("Attack", 0, 0);
+                anim.Play("Use", 0, 0);
                 comboIndex++;
                 lastClick = Time.time;
 
@@ -55,9 +58,9 @@ public class PlayerCombat : MonoBehaviour
         }
     }
     
-    private void ExitAttack() {
+    private void ExitAnim() {
         var stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.normalizedTime > animCompletion && stateInfo.IsTag("Attack")) {
+        if(stateInfo.normalizedTime > animCompletion && stateInfo.IsTag("UseAnimation")) {
             Invoke("EndCombo", endDelay);
         }
     }

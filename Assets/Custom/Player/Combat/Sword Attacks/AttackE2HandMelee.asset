@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32b0c572b1c06e488a7c66d8f5aa62a, type: 3}
   m_Name: AttackE2HandMelee
   m_EditorClassIdentifier: 
-  animOverride: {fileID: 0}
+  animOverride: {fileID: 22100000, guid: 887fe74990b0d0c459890dd728bc35bd, type: 2}
   minAnimDuration: 0.95
   damage: 0

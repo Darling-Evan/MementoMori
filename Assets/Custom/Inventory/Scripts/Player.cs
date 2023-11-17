@@ -17,13 +17,14 @@ public class Player : MonoBehaviour {
     public static Player Instance { get; private set; }
 
     [SerializeField] private GameObject inventory;
-    [SerializeField] private Item currentWeapon;
+    [SerializeField] private Item currentItem;
     [SerializeField] private Transform weaponParent;
 
     public Transform WeaponParent { get { return weaponParent; } }
-    public Item CurrentWeapon { get { return currentWeapon; } }
+    public Item CurrentItem { get { return currentItem; } set { currentItem = value; } }
 
     private InventoryManager manager;
+    private Use useAnimator;
     private GameObject currentMenu;
 
 
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour {
     private void Awake() {
         manager = InventoryManager.Instance;
         Instance = this;
+
+        useAnimator = GetComponent<Use>();
     }
 
     private void Update() {
@@ -56,14 +59,15 @@ public class Player : MonoBehaviour {
         if(i != 0 && InventoryManager.Instance.HotBar[i-1] != null) {
             if (InventoryManager.Instance.HotBar[i - 1].Item != null) {
 
-                if (currentWeapon != InventoryManager.Instance.HotBar[i - 1].Item && currentWeapon.Deployed == true) {
-                    currentWeapon.Deployed = false;
-                    Destroy(currentWeapon.Instance.gameObject);
+                if (CurrentItem != InventoryManager.Instance.HotBar[i - 1].Item && CurrentItem.Deployed == true) {
+                    CurrentItem.Deployed = false;
+                    Destroy(CurrentItem.Instance.gameObject);
                 }
-                currentWeapon = InventoryManager.Instance.HotBar[i - 1].Item as Weapon;
+                CurrentItem = InventoryManager.Instance.HotBar[i - 1].Item;
+                useAnimator.Combo = currentItem.Animations;
 
-                Debug.Log("Deploy: " + currentWeapon.ItemName);
-                currentWeapon.Deploy();
+                Debug.Log("Deploy: " + CurrentItem.ItemName);
+                CurrentItem.Deploy();
             }
         }
     }

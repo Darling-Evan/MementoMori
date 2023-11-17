@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-public class AttackSO : ScriptableObject
+public class UseAnimSO : ScriptableObject
 {
     [Header("Animation Properties")]
     public AnimatorOverrideController animOverride;
