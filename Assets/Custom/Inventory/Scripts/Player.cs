@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     public static Player Instance { get; private set; }
 
     [SerializeField] private GameObject inventory;
+    public static bool inventoryIsShowing = false;
     [SerializeField] private Item currentItem;
     [SerializeField] private Transform weaponParent;
 
@@ -39,15 +40,24 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Tab)) {
-            inventory.SetActive(!inventory.activeSelf);
-            if (inventory.activeInHierarchy) { currentMenu = inventory; } else { currentMenu = null; }
-        }
 
-        if (currentMenu != null) {
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-                currentMenu.SetActive(false);
-                currentMenu = null;
+        if (MapShow.mapIsShowing == false && CardShow.CardsAreShowing == false && PauseMenu.GameIsPaused == false)
+        {
+            if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Tab))
+            {
+                inventory.SetActive(!inventory.activeSelf);
+                if (inventory.activeInHierarchy) { currentMenu = inventory; } else { currentMenu = null; }
+                inventoryIsShowing = true;
+            }
+
+            if (currentMenu != null)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    currentMenu.SetActive(false);
+                    currentMenu = null;
+                    inventoryIsShowing = false;
+                }
             }
         }
 

@@ -11,7 +11,7 @@ public class CardShow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.GameIsPaused == false && MapShow.mapIsShowing == false)
+        if (PauseMenu.GameIsPaused == false && MapShow.mapIsShowing == false && Player.inventoryIsShowing == false)
         {
             if (Input.GetKeyDown(KeyCode.B))
             {

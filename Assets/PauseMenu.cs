@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CardShow.CardsAreShowing == false && MapShow.mapIsShowing == false)
+        if (CardShow.CardsAreShowing == false && MapShow.mapIsShowing == false && Player.inventoryIsShowing == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
