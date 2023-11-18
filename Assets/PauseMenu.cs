@@ -13,14 +13,18 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (CardShow.CardsAreShowing == false && MapShow.mapIsShowing == false)
         {
-            if (GameIsPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            } else
-            {
-                Pause();
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
@@ -47,4 +51,5 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenuScene");
     }
+
 }
