@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("MainMap");
     }
 
     public void QuitGame()
@@ -15,4 +15,5 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
 }
