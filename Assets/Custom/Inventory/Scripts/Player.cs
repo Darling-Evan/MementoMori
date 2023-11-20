@@ -45,9 +45,16 @@ public class Player : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Tab))
             {
-                inventory.SetActive(!inventory.activeSelf);
-                if (inventory.activeInHierarchy) { currentMenu = inventory; } else { currentMenu = null; }
                 inventoryIsShowing = true;
+                inventory.SetActive(!inventory.activeSelf);
+                if (inventory.activeInHierarchy) 
+                { 
+                    currentMenu = inventory;
+                } 
+                else 
+                { 
+                    currentMenu = null;
+                }
             }
 
             if (currentMenu != null)
