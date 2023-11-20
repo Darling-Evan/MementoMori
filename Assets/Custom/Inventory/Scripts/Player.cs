@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
                 else 
                 { 
                     currentMenu = null;
+                    inventoryIsShowing = false;
                 }
             }
 
