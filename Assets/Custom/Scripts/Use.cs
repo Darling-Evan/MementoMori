@@ -31,7 +31,6 @@ public class Use : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1")) {
-            Debug.Log("fire");
             Animate();
         }
         ExitAnim();
@@ -40,12 +39,10 @@ public class Use : MonoBehaviour
     private void Animate() {
         if(Time.time - lastCombo > comboCooldown && comboIndex < combo.Count) {
             CancelInvoke("EndCombo");
-            Debug.Log("CancelInvoke");
             currentAttack = combo[comboIndex];
             if(Time.time - lastClick >= currentAttack.animOverride["UseAnimation"].length * currentAttack.MinAnimDuration) {
                 anim.runtimeAnimatorController = combo[comboIndex].animOverride;
                 //Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
-                Debug.Log("anim");
 
                 anim.Play("Use", 0, 0);
                 comboIndex++;
@@ -60,7 +57,7 @@ public class Use : MonoBehaviour
     
     private void ExitAnim() {
         var stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.normalizedTime > animCompletion && stateInfo.IsTag("UseAnimation")) {
+        if((stateInfo.normalizedTime > animCompletion && stateInfo.IsTag("UseAnimation")) || anim.GetBool("Inventory")) {
             Invoke("EndCombo", endDelay);
         }
     }
