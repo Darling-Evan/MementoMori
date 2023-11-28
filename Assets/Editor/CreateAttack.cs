@@ -5,13 +5,16 @@ using UnityEditor;
 using StarterAssets;
 using UnityEngine.TextCore.Text;
 using System;
+using UnityEngine.WSA;
+using Codice.Client.BaseCommands.Import;
 
 public class CreateAttack
 {
     //This script adds a menu item that shows up when you right click an asset in the project window
     //If you run it on a animation clip(s) it will create a AttackSO and AnimatorOverrideController for each clip that you have selected
     // The new assets will be set up already and can be found at Assets/Custom/Player/Combat/
-    // They will not be sorted into folders so you will have to do that yourself
+    // They will be sorted into folders sharing the same name as the animation
+    //  This system does not support animations with the same name
 
     //This script can only be run in the editor.
 
@@ -26,14 +29,26 @@ public class CreateAttack
 
         foreach (var item in Selection.objects) {
             if(item is AnimationClip) {
-                UseAnimSO attackSO = ScriptableObject.CreateInstance<UseAnimSO>();
-                AssetDatabase.CreateAsset(attackSO, "Assets/Custom/Player/Combat/" + item.name + ".asset");
+                //Create Folder
+                string folderGUID = AssetDatabase.CreateFolder("Assets/Custom/Player/Combat/Meele Attacks", item.name);
+                string folder = AssetDatabase.GUIDToAssetPath(folderGUID) + "/";
 
+                //Duplicate Animation Clip
+                string dupePath = folder + item.name + ".fbx";
+                AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(item), dupePath);
+
+                //Create AttackSO
+                UseAnimSO attackSO = ScriptableObject.CreateInstance<UseAnimSO>();
+                AssetDatabase.CreateAsset(attackSO, folder + item.name + ".asset");
+
+                //Create Override Controller
                 AnimatorOverrideController overrideController = new AnimatorOverrideController(anim);
                 overrideController["AttackPH"] = item as AnimationClip;
-                AssetDatabase.CreateAsset(overrideController, "Assets/Custom/Player/Combat/" + item.name + ".overrideController");
+                AssetDatabase.CreateAsset(overrideController, folder + item.name + ".overrideController");
 
+                //Populate AttackSO
                 attackSO.animOverride = overrideController;
+                
             }
         }
     }

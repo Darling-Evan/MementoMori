@@ -91,7 +91,6 @@ public class InventoryManager : MonoBehaviour {
     private void ResetSlots() {
         expectedSlot = null;
         selectedItem = null;
-
     }
 
 

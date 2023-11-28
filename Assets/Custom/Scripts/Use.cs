@@ -66,4 +66,8 @@ public class Use : MonoBehaviour
         comboIndex = 0;
         lastCombo = Time.time;
     }
+
+    public void Swing() {
+        Debug.Log("Swing");
+    }
 }
