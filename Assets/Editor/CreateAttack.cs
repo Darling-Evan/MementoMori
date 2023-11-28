@@ -43,12 +43,11 @@ public class CreateAttack
 
                 //Create Override Controller
                 AnimatorOverrideController overrideController = new AnimatorOverrideController(anim);
-                overrideController["AttackPH"] = item as AnimationClip;
+                overrideController["UseAnimation"] = item as AnimationClip;
                 AssetDatabase.CreateAsset(overrideController, folder + item.name + ".overrideController");
 
                 //Populate AttackSO
                 attackSO.animOverride = overrideController;
-                
             }
         }
     }

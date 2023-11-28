@@ -41961,7 +41961,7 @@ MonoBehaviour:
   animCompletion: 0.9
   endDelay: 0.8
   combo:
-  - {fileID: 11400000, guid: 78a2b46c7c24df1478445e2bcf26a30a, type: 2}
+  - {fileID: 11400000, guid: fc5f3bad36ab8c04d85a272c3064c4c0, type: 2}
 --- !u!114 &1365416506
 MonoBehaviour:
   m_ObjectHideFlags: 0
