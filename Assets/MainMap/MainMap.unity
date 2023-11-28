@@ -20743,6 +20743,7 @@ GameObject:
   - component: {fileID: 665180192}
   - component: {fileID: 665180191}
   - component: {fileID: 665180190}
+  - component: {fileID: 665180194}
   m_Layer: 5
   m_Name: HotBar
   m_TagString: Untagged
@@ -20851,6 +20852,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &665180194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665180188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a237293045e88441a8220abff9445c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &665729138
 PrefabInstance:
   m_ObjectHideFlags: 0
