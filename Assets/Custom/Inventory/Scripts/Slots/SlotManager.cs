@@ -42,7 +42,7 @@ public class SlotManager : MonoBehaviour
         }
         else { 
             if (manager.expectedSlot != null) {
-            manager.Equip(manager.expectedSlot.slot, item);
+            manager.Equip(manager.expectedSlot.slotNumber, item);
             }
             else {
                 manager.selectedItem = this;

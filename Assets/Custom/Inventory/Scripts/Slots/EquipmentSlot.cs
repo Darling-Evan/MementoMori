@@ -8,10 +8,14 @@ public class EquipmentSlot : MonoBehaviour
     [SerializeReference]
     private Item item;
 
+    [SerializeField] private GameObject slot;
+
     [SerializeField] private string typeID;
-    public int slot;
+    public int slotNumber;
 
     private Image icon;
+    private Image hbIcon;
+
     private Button button;
     private InventoryManager manager;
 
@@ -22,23 +26,29 @@ public class EquipmentSlot : MonoBehaviour
 
     private void Awake() {
         manager = InventoryManager.Instance;
-        manager.HotBar[slot] = this;
+        manager.HotBar[slotNumber] = this;
         button = gameObject.GetComponent<Button>();
+
         icon = gameObject.transform.Find("Icon").GetComponent<Image>();
+        hbIcon = slot.transform.Find("Icon").GetComponent<Image>();
 
         if(icon.sprite == null) {
             icon.enabled = false;
+            hbIcon.enabled = false;
         }
     }
 
     public void Populate() {
         icon.sprite = item.Icon;
+        hbIcon.sprite = item.Icon;
+
         icon.enabled = true;
+        hbIcon.enabled = true;
     }
 
     public void Equip() {
         if (manager.selectedItem != null) {
-            manager.Equip(slot, manager.selectedItem.item);
+            manager.Equip(slotNumber, manager.selectedItem.item);
         }
         else {
             manager.expectedSlot = this;
