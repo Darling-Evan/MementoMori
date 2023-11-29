@@ -1,7 +1,9 @@
+using BehaviorDesigner.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -41,7 +43,11 @@ public class Entity : MonoBehaviour
     }
 
     public void Die() {
-        gameObject.GetComponent<Animator>().SetTrigger("Dead");
+        gameObject.GetComponent<BehaviorTree>().DisableBehavior();
+        gameObject.GetComponent<RMSync>().enabled = false;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+
+        gameObject.GetComponent<Animator>().SetBool("Dead", true);
     }
 }
 
