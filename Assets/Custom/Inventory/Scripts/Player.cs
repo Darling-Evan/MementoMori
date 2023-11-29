@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
             {
                 InventoryManager.Instance.hotBarGO.SetActive(false);
                 inventoryIsShowing = true;
+                Time.timeScale = 0f;
                 inventory.SetActive(!inventory.activeSelf);
                 if (inventory.activeInHierarchy) 
                 { 
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour {
                     InventoryManager.Instance.hotBarGO.SetActive(true);
                     currentMenu = null;
                     inventoryIsShowing = false;
+                    Time.timeScale = 1f;
                 }
             }
 
@@ -68,6 +70,7 @@ public class Player : MonoBehaviour {
                     currentMenu.SetActive(false);
                     currentMenu = null;
                     inventoryIsShowing = false;
+                    Time.timeScale = 1f;
                 }
             }
         }
