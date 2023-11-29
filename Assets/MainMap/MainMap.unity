@@ -40410,11 +40410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3126122260983879726, guid: 4746399ff0b542d478b7d3234edfd7b3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3126122260983879726, guid: 4746399ff0b542d478b7d3234edfd7b3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513259105121232262, guid: 4746399ff0b542d478b7d3234edfd7b3, type: 3}
       propertyPath: m_UseGravity
@@ -40494,7 +40494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734127606857842364, guid: 4746399ff0b542d478b7d3234edfd7b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6734127606857842416, guid: 4746399ff0b542d478b7d3234edfd7b3, type: 3}
       propertyPath: m_IsActive
@@ -62289,7 +62289,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2695984623402319085, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6362982593337300032, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
     m_AddedGameObjects: []
@@ -64239,7 +64240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2078476381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737577652e87e4040a1e82f022a3b558, type: 3}
+  m_Script: {fileID: 11500000, guid: ae2c3dd295779b34f95c8aa60c966116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2078556113
