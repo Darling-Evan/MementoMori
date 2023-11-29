@@ -70,11 +70,14 @@ public class Use : MonoBehaviour
         lastCombo = Time.time;
     }
 
-    public void UseItem() {
-        Debug.Log("UseItem");
+    public void ToggleUse() {
         if(Player.Instance.CurrentItem != null && Player.Instance.CurrentItem is Weapon weapon) {
-            Debug.Log("Weapon");
-            weapon.AttackTriggered = true;
+            if (weapon.AttackTriggered == false) {
+                weapon.AttackTriggered = true;
+            }
+            else {
+                weapon.AttackTriggered = false;
+            }
         }
     }
 }

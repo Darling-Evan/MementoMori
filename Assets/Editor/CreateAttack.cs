@@ -40,11 +40,11 @@ public class CreateAttack
                 //Create AttackSO
                 UseAnimSO attackSO = ScriptableObject.CreateInstance<UseAnimSO>();
                 AssetDatabase.CreateAsset(attackSO, folder + item.name + ".asset");
-
+                
                 //Create Override Controller
                 AnimatorOverrideController overrideController = new AnimatorOverrideController(anim);
-                overrideController["UseAnimation"] = item as AnimationClip;
-                AssetDatabase.CreateAsset(overrideController, folder + item.name + ".overrideController");
+                //overrideController["UseAnimation"] = Resources.Load<AnimationClip>(AssetDatabase.GetAssetPath(item));
+;               AssetDatabase.CreateAsset(overrideController, folder + item.name + ".overrideController");
 
                 //Populate AttackSO
                 attackSO.animOverride = overrideController;
