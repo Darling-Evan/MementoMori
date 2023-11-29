@@ -42,7 +42,10 @@ public class Use : MonoBehaviour
             currentAttack = combo[comboIndex];
             if(Time.time - lastClick >= currentAttack.animOverride["UseAnimation"].length * currentAttack.MinAnimDuration) {
                 anim.runtimeAnimatorController = combo[comboIndex].animOverride;
-                //Player.Instance.CurrentWeapon.Damage = combo[comboIndex].damage;
+                
+                if(Player.Instance.CurrentItem is Weapon weapon) {
+                    weapon.Damage = currentAttack.Damage;
+                }
 
                 anim.Play("Use", 0, 0);
                 comboIndex++;
@@ -67,7 +70,11 @@ public class Use : MonoBehaviour
         lastCombo = Time.time;
     }
 
-    public void Swing() {
-        Debug.Log("Swing");
+    public void UseItem() {
+        Debug.Log("UseItem");
+        if(Player.Instance.CurrentItem != null && Player.Instance.CurrentItem is Weapon weapon) {
+            Debug.Log("Weapon");
+            weapon.AttackTriggered = true;
+        }
     }
 }

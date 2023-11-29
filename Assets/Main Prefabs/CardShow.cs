@@ -29,7 +29,7 @@ public class CardShow : MonoBehaviour
 
     void HideCards()
     {
-        HotBar.Instance.gameObject.SetActive(true);
+        InventoryManager.Instance.hotBarGO.SetActive(true);
         cardShowingUI.SetActive(false);
         Time.timeScale = 1f;
         CardsAreShowing = false;
@@ -37,7 +37,7 @@ public class CardShow : MonoBehaviour
 
     void ShowCards()
     {
-        HotBar.Instance.gameObject.SetActive(false);
+        InventoryManager.Instance.hotBarGO.SetActive(false);
         cardShowingUI.SetActive(true);
         Time.timeScale = 0f;
         CardsAreShowing = true;

@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.I) | Input.GetKeyDown(KeyCode.Tab))
             {
-                HotBar.Instance.gameObject.SetActive(false);
+                InventoryManager.Instance.hotBarGO.SetActive(false);
                 inventoryIsShowing = true;
                 inventory.SetActive(!inventory.activeSelf);
                 if (inventory.activeInHierarchy) 
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
                 } 
                 else 
                 {
-                    HotBar.Instance.gameObject.SetActive(true);
+                    InventoryManager.Instance.hotBarGO.SetActive(true);
                     currentMenu = null;
                     inventoryIsShowing = false;
                 }
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    HotBar.Instance.gameObject.SetActive(true);
+                    InventoryManager.Instance.hotBarGO.SetActive(false);
                     currentMenu.SetActive(false);
                     currentMenu = null;
                     inventoryIsShowing = false;

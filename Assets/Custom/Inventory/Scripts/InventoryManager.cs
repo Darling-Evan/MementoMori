@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour {
 
     public RectTransform Content;
     public GameObject SlotPrefab;
+    public GameObject hotBarGO;
 
     [SerializeField] private Dictionary<string, Item> inventory = new Dictionary<string, Item>();
     [SerializeField] private ArmorSlot[] equippedArmor = new ArmorSlot[4];

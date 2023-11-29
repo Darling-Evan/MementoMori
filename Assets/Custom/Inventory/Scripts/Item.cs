@@ -43,6 +43,11 @@ public class Item {
         if(deployable && !deployed) {
             var item = GameObject.Instantiate(prefab, Player.Instance.WeaponParent);
             item.AddComponent<ItemWrapper>().itemInstance = this;
+
+            MeshCollider collider = item.AddComponent<MeshCollider>();
+            collider.convex = true;
+            collider.isTrigger = true;
+
             instance = item.GetComponent<ItemWrapper>();
             deployed = true;
         }

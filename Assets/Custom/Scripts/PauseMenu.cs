@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        HotBar.Instance.gameObject.SetActive(true);
+        InventoryManager.Instance.hotBarGO.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pauseMenuUI.SetActive(false);
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        HotBar.Instance.gameObject.SetActive(false);
+        InventoryManager.Instance.hotBarGO.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         pauseMenuUI.SetActive(true);
