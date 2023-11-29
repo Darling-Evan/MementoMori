@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
@@ -20,6 +21,10 @@ public class Entity : MonoBehaviour
     }
 
     private void Update() { 
+        if(health <= 0) {
+            Die();
+        }
+
         if(healthBar) {
             healthBar.value = health / maxHealth;
         }
@@ -34,4 +39,10 @@ public class Entity : MonoBehaviour
         }
         return health;
     }
+
+    public void Die() {
+        gameObject.GetComponent<Animator>().SetTrigger("Dead");
+    }
 }
+
+

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animOverride: {fileID: 22100000, guid: cff7759d662b6dd4ca8e7588a4f67cee, type: 2}
   minAnimDuration: 0.95
-  damage: 10
+  damage: 100
