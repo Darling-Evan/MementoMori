@@ -4262,8 +4262,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
-  MinDistance: 50
-  MaxDistance: 100
+  MinDistance: 49.75
+  MaxDistance: 94
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -4313,7 +4313,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -61829,6 +61829,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5053940351873407323, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.916051
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053940351873407323, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.52115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053940351873407323, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.36167
+      objectReference: {fileID: 0}
     - target: {fileID: 5131240475286565402, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -61899,11 +61911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815740956945047855, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.521149
+      value: 13.52115
       objectReference: {fileID: 0}
     - target: {fileID: 6815740956945047855, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.3616705
+      value: -7.36167
       objectReference: {fileID: 0}
     - target: {fileID: 6815740956945047855, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62011,15 +62023,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8009081875323149271, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.15
+      value: 22.42
       objectReference: {fileID: 0}
     - target: {fileID: 8009081875323149271, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.08
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 8009081875323149271, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.2
+      value: 11.69
       objectReference: {fileID: 0}
     - target: {fileID: 8009081875323149271, guid: 83b3758bc8cd52843a38768720afdb55, type: 3}
       propertyPath: m_LocalRotation.w
