@@ -16,23 +16,49 @@ public class DissolveController : MonoBehaviour
 
 
     private void Start() {
+        GetMats(gameObject);
         foreach(Transform child in transform) {
-            Debug.Log(child.name);
-            if(child.GetComponent<SkinnedMeshRenderer>()) {
-                foreach (Material mat in child.GetComponent<SkinnedMeshRenderer>().materials) {
-                    materials.Add(mat);
-                }
-            }
+            GetMats(child.gameObject);
         }
     }
 
-
+    [ContextMenu("StartDissolve")]
     public void StartDissolve() {
         StartCoroutine(Dissolve());
     }
 
-    IEnumerator Dissolve() {
-        dissolveEffect.Play();
+    [ContextMenu("StartMaterialize")]
+    public void StartMaterialize() {
+        StartCoroutine(Materialize());
+    }
+
+
+    private void GetMats(GameObject go) {
+        if(go.GetComponent<MeshRenderer>() != null) {
+            foreach (Material mat in go.GetComponent<MeshRenderer>().materials) {
+                try {
+                    mat.SetFloat("_DissolveAmount", 0);
+                } catch {
+                    Debug.Log(mat.name + "Is not a dissolve shader");
+                }
+                
+                materials.Add(mat);
+            }
+        }
+
+        if(go.GetComponent<SkinnedMeshRenderer>() != null) {
+            foreach (Material mat in go.GetComponent<SkinnedMeshRenderer>().materials) {
+                mat.SetFloat("_DissolveAmount", 0);
+                materials.Add(mat);
+            }
+        }
+    }
+
+    private IEnumerator Dissolve() {
+        if(dissolveEffect != null) {
+            dissolveEffect.Play();
+        }
+
         if(materials.Count > 0) {
             float counter = 0;
 
@@ -49,4 +75,20 @@ public class DissolveController : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator Materialize() {
+        if(materials.Count > 0) {
+            float counter = 1;
+
+            while (materials[0].GetFloat("_DissolveAmount") > 0) {
+                counter -= dissolveRate;
+
+                foreach (Material mat in materials) {
+                    mat.SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+            }
+        }
+    }
+
 }

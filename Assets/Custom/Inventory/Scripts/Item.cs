@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [System.Serializable]
 public class Item {
@@ -30,7 +31,6 @@ public class Item {
     public bool Deployable { get { return deployable; } set { this.deployable = value; } }
 
 
-
     private ItemWrapper instance;
     public ItemWrapper Instance { get { return instance; } set { this.instance = value; } }
 
@@ -42,6 +42,15 @@ public class Item {
     public void Deploy() {
         if(deployable && !deployed) {
             var item = GameObject.Instantiate(prefab, Player.Instance.WeaponParent);
+
+
+            if(item.GetComponent<MaterializeController>() != null) {
+                var materialize = item.GetComponent<MaterializeController>();
+                materialize.Initialize();
+                materialize.ResetState();
+                materialize.StartMaterialize();
+            }
+
             item.AddComponent<ItemWrapper>().itemInstance = this;
 
             MeshCollider collider = item.AddComponent<MeshCollider>();
@@ -50,6 +59,7 @@ public class Item {
 
             instance = item.GetComponent<ItemWrapper>();
             deployed = true;
+
         }
     }
 }

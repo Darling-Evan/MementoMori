@@ -44,8 +44,8 @@ public class Entity : MonoBehaviour
 
     public void Die() {
         gameObject.GetComponent<BehaviorTree>().DisableBehavior();
-        gameObject.GetComponent<RMSync>().enabled = false;
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        //gameObject.GetComponent<RMSync>().enabled = false;
+        //gameObject.GetComponent<NavMeshAgent>().enabled = false;
 
         gameObject.GetComponent<Animator>().SetBool("Dead", true);
     }

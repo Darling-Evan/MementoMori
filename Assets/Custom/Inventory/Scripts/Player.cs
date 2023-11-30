@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
 
     public Transform WeaponParent { get { return weaponParent; } }
     public Item CurrentItem { get { return currentItem; } set { currentItem = value; } }
+    public GameObject Inventory { get { return inventory; } }
 
     private InventoryManager manager;
     private Use useAnimator;
@@ -47,7 +48,6 @@ public class Player : MonoBehaviour {
             {
                 InventoryManager.Instance.hotBarGO.SetActive(false);
                 inventoryIsShowing = true;
-                Time.timeScale = 0f;
                 inventory.SetActive(!inventory.activeSelf);
                 if (inventory.activeInHierarchy) 
                 { 
@@ -58,7 +58,6 @@ public class Player : MonoBehaviour {
                     InventoryManager.Instance.hotBarGO.SetActive(true);
                     currentMenu = null;
                     inventoryIsShowing = false;
-                    Time.timeScale = 1f;
                 }
             }
 
@@ -70,7 +69,6 @@ public class Player : MonoBehaviour {
                     currentMenu.SetActive(false);
                     currentMenu = null;
                     inventoryIsShowing = false;
-                    Time.timeScale = 1f;
                 }
             }
         }
@@ -97,7 +95,7 @@ public class Player : MonoBehaviour {
     }
 
 
-    private int CheckHotbar() {
+    public int CheckHotbar() {
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             return 1;
         }

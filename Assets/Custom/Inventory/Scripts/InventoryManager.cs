@@ -33,6 +33,10 @@ public class InventoryManager : MonoBehaviour {
         Instance = this;
     }
 
+    private void Update() {
+        checkKeys();
+    }
+
     #region AddItems
     public void InventoryAdd(Item item) {
         inventory.Add(item.ItemID ,item);
@@ -129,6 +133,20 @@ public class InventoryManager : MonoBehaviour {
 
     private void RefreshDisp() {
         DispAll();
+    }
+
+
+    #endregion
+
+
+    #region QOL
+
+    private void checkKeys() {
+        if (Player.Instance.Inventory.active) {
+            if(Player.Instance.CheckHotbar() != 0) {
+                expectedSlot = hotBar[Player.Instance.CheckHotbar() - 1];
+            }
+        }
     }
 
 
